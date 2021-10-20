@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/drag-and-drop-demo/static/css/main.8c8b27cf.chunk.css",
+    "main.js": "/drag-and-drop-demo/static/js/main.b2f66fba.chunk.js",
+    "main.js.map": "/drag-and-drop-demo/static/js/main.b2f66fba.chunk.js.map",
+    "runtime-main.js": "/drag-and-drop-demo/static/js/runtime-main.67cd826e.js",
+    "runtime-main.js.map": "/drag-and-drop-demo/static/js/runtime-main.67cd826e.js.map",
+    "static/js/2.96838496.chunk.js": "/drag-and-drop-demo/static/js/2.96838496.chunk.js",
+    "static/js/2.96838496.chunk.js.map": "/drag-and-drop-demo/static/js/2.96838496.chunk.js.map",
+    "static/js/3.c2dbf1f3.chunk.js": "/drag-and-drop-demo/static/js/3.c2dbf1f3.chunk.js",
+    "static/js/3.c2dbf1f3.chunk.js.map": "/drag-and-drop-demo/static/js/3.c2dbf1f3.chunk.js.map",
+    "index.html": "/drag-and-drop-demo/index.html",
+    "static/css/main.8c8b27cf.chunk.css.map": "/drag-and-drop-demo/static/css/main.8c8b27cf.chunk.css.map",
+    "static/js/2.96838496.chunk.js.LICENSE.txt": "/drag-and-drop-demo/static/js/2.96838496.chunk.js.LICENSE.txt",
+    "static/media/logo.6ce24c58.svg": "/drag-and-drop-demo/static/media/logo.6ce24c58.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.67cd826e.js",
+    "static/js/2.96838496.chunk.js",
+    "static/css/main.8c8b27cf.chunk.css",
+    "static/js/main.b2f66fba.chunk.js"
+  ]
+}
