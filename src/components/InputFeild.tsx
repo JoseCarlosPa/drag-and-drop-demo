@@ -4,11 +4,12 @@ import './styles.css';
 interface Props {
     toDo: string;
     setToDo: React.Dispatch<React.SetStateAction<string>>;
+    handleAdd:(e:React.FormEvent) =>void;
 }
 
-const InputFeild: React.FC<Props> = ({toDo, setToDo}: Props) => {
+const InputFeild: React.FC<Props> = ({toDo, setToDo,handleAdd}: Props) => {
     return (
-        <form className="input">
+        <form className="input" onSubmit={handleAdd}>
             <input type="input" placeholder="Nueva tarjeta" className="inputBox" value={toDo}
                    onChange={(e) => setToDo(e.target.value)}/>
             <button className="inputSubmit">Registrar</button>
