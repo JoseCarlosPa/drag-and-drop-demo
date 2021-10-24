@@ -1,5 +1,5 @@
 export interface ToDo{
     id:number;
     toDo:string;
-    state:number;
+    state:string;
 }

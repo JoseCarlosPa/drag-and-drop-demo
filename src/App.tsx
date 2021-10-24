@@ -13,7 +13,7 @@ const App: React.FC = () => {
         e.preventDefault();
 
         if (toDo) {
-            setToDos([...toDos, {id: Date.now(), toDo: toDo, state: 1}])
+            setToDos([...toDos, {id: Date.now(), toDo: toDo, state: "To Do"}])
             setToDo("");
         }
     }
