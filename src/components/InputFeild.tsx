@@ -8,8 +8,9 @@ interface Props {
 }
 
 const InputFeild: React.FC<Props> = ({toDo, setToDo,handleAdd}: Props) => {
+
     return (
-        <form className="input" onSubmit={handleAdd}>
+        <form className="input" onSubmit={ (e) =>handleAdd(e)}>
             <input type="input" placeholder="Nueva tarjeta" className="inputBox" value={toDo}
                    onChange={(e) => setToDo(e.target.value)}/>
             <button className="inputSubmit">Registrar</button>

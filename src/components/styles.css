@@ -15,11 +15,6 @@
     box-shadow: inset 0 0 5px black;
 }
 
-.inputBox:focus {
-    box-shadow: 0 0 10px 10000px #4f0dad;
-    outline: none;
-}
-
 .inputSubmit {
     position: absolute;
     width: 150px;
@@ -41,4 +36,37 @@
 .inputSubmit:active{
     transform: scale(0.9);
     box-shadow: 0 0 5px black;
+}
+
+.toDos{
+    display: flex;
+    justify-content: space-evenly;
+    width: 90%;
+    flex-wrap: wrap;
+}
+
+.icon{
+    margin-left: 10px;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.toDoSingle{
+    display: flex;
+    width: 30%;
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 15px;
+    background: rgba( 255, 255, 255, 0.25 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.todoSingleText{
+    flex: 1;
+    padding: 5px;
+    border: none;
+    font-size: 20px;
 }
