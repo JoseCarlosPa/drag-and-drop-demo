@@ -21,9 +21,7 @@ const App: React.FC = () => {
         }
     }
 
-
     const onDragEnd = (result: DropResult) => {
-
 
         const {source, destination} = result;
         if (!destination) return;
@@ -34,7 +32,6 @@ const App: React.FC = () => {
             complete = completedToDos;
 
         // Checamos a que parte del Droppable id corresponde y se lo quitamos según nos regrese el API
-
         if (source.droppableId === 'ToDoList') {
             add = active[source.index];
             active.splice(source.index, 1);
@@ -47,8 +44,6 @@ const App: React.FC = () => {
             complete.splice(source.index, 1);
 
         }
-
-
 
         // Ahora Agregamos lo que se quito al source destino
         if (destination.droppableId === 'ToDoList') {
@@ -65,7 +60,6 @@ const App: React.FC = () => {
         setcompletedToDos(complete);
         setDoing(progress);
         setToDos(active);
-
     }
 
     return (

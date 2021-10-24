@@ -1,8 +1,8 @@
 import React, {useState} from "react";
-import {ToDo} from "../models/model";
-import {AiFillEdit, AiFillDelete} from "react-icons/all";
-import './styles.css';
 import {Draggable} from "react-beautiful-dnd";
+import {AiFillEdit, AiFillDelete} from "react-icons/all";
+import {ToDo} from "../models/model";
+import './styles.css';
 
 interface props {
     index: number;
@@ -14,17 +14,31 @@ interface props {
 
 const SingleToDo = ({index, toDo, toDos, setToDos}: props) => {
 
-    // UseSates para edicion de una tarjeta
+    // UseSates para edición de una tarjeta
+
     const [edit, setEdit] = useState<boolean>(false);
     const [editToDo, setEditToDo] = useState<string>(toDo.toDo);
 
-    // Handle para editar una tarjeta
+    /*
+    * Handle para editar una tarjeta
+    * Input: event:React Form Event & id:number
+    * Output: Edición en tarjeta elegida segun el id
+    */
     const handleEdit = (e: React.FormEvent, id: number) => {
         e.preventDefault();
         setToDos(toDos.map((toDo) => (
             toDo.id === id ? {...toDo, toDo: editToDo} : toDo))
         );
         setEdit(false);
+    };
+
+    /*
+    * Handel para eliminar una tarjeta
+    * Input: id:number -> Id de la tarjeta
+    * OutPut: Action event delete
+    */
+    const handleDelete = (id: number) => {
+        setToDos(toDos.filter((toDo) => toDo.id !== id))
     };
 
     return (
@@ -47,22 +61,21 @@ const SingleToDo = ({index, toDo, toDos, setToDos}: props) => {
                             <span className="todoSingleText">{toDo.toDo}</span>
                         )}
                         <div>
-                <span className="icon" onClick={() => {
-                    if (!edit) {
-                        setEdit(!edit)
-                    }
-                }}>
-                    <AiFillEdit/>
-                </span>
-                            <span className="icon">
-                    <AiFillDelete/>
-                </span>
+                            <span className="icon" onClick={() => {
+                                if (!edit) {
+                                    setEdit(!edit)
+                                }
+                            }}>
+                                <AiFillEdit/>
+                            </span>
+                            <span className="icon" onClick={() => handleDelete(toDo.id)}>
+                                <AiFillDelete/>
+                            </span>
                         </div>
                     </form>
                 )
             }
         </Draggable>
-
     );
 }
 

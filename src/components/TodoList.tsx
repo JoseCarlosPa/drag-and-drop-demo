@@ -1,8 +1,8 @@
 import React from "react";
-import "./styles.css";
-import {ToDo} from "../models/model";
 import SingleToDo from "./SingleToDo";
 import {Droppable} from "react-beautiful-dnd";
+import {ToDo} from "../models/model";
+import "./styles.css";
 
 interface props {
     toDos: ToDo[];
@@ -13,7 +13,7 @@ interface props {
     setcompletedToDos: React.Dispatch<React.SetStateAction<ToDo[]>>;
 }
 
-const TodoList = ({toDos, setToDos,doing,setDoing,completedToDos,setcompletedToDos}: props) => {
+const TodoList = ({toDos, setToDos, doing, setDoing, completedToDos, setcompletedToDos}: props) => {
     return (
         <div className="container">
 
@@ -50,7 +50,7 @@ const TodoList = ({toDos, setToDos,doing,setDoing,completedToDos,setcompletedToD
                                 En progreso
                             </span>
                             {
-                                doing.map((toDo,index) => (
+                                doing.map((toDo, index) => (
                                     <SingleToDo
                                         index={index}
                                         toDo={toDo}
@@ -69,13 +69,13 @@ const TodoList = ({toDos, setToDos,doing,setDoing,completedToDos,setcompletedToD
             {/*Columna de cosas Terminadas*/}
             <Droppable droppableId="completedToDos">
                 {
-                    (provided)=>(
+                    (provided) => (
                         <div className="toDos done" ref={provided.innerRef}{...provided.droppableProps}>
                             <span className="toDosHeading">
                                 Terminados
                             </span>
                             {
-                                completedToDos.map((toDo,index) => (
+                                completedToDos.map((toDo, index) => (
                                     <SingleToDo
                                         index={index}
                                         toDo={toDo}
@@ -89,9 +89,6 @@ const TodoList = ({toDos, setToDos,doing,setDoing,completedToDos,setcompletedToD
                     )
                 }
             </Droppable>
-
-
-
         </div>
     );
 }
