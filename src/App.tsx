@@ -4,6 +4,7 @@ import InputFeild from './components/InputFeild';
 import {ToDo} from "./models/model";
 import TodoList from "./components/TodoList";
 import {DragDropContext, DropResult} from 'react-beautiful-dnd';
+import {RecoilRoot} from "recoil";
 
 const App: React.FC = () => {
 
@@ -62,25 +63,28 @@ const App: React.FC = () => {
         setToDos(active);
     }
 
+
     return (
-        <DragDropContext onDragEnd={onDragEnd}>
-            <div className="App">
-                <span className="heading">LeadSales</span>
-                <InputFeild
-                    toDo={toDo}
-                    setToDo={setToDo}
-                    handleAdd={handleAdd}
-                />
-                <TodoList
-                    toDos={toDos}
-                    setToDos={setToDos}
-                    doing={doing}
-                    setDoing={setDoing}
-                    completedToDos={completedToDos}
-                    setcompletedToDos={setcompletedToDos}
-                />
-            </div>
-        </DragDropContext>
+        <RecoilRoot>
+            <DragDropContext onDragEnd={onDragEnd}>
+                <div className="App">
+                    <span className="heading">LeadSales</span>
+                    <InputFeild
+                        toDo={toDo}
+                        setToDo={setToDo}
+                        handleAdd={handleAdd}
+                    />
+                    <TodoList
+                        toDos={toDos}
+                        setToDos={setToDos}
+                        doing={doing}
+                        setDoing={setDoing}
+                        completedToDos={completedToDos}
+                        setcompletedToDos={setcompletedToDos}
+                    />
+                </div>
+            </DragDropContext>
+        </RecoilRoot>
     );
 }
 
